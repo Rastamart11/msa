@@ -1,0 +1,39 @@
+camel:
+  springboot:
+    # The Camel context name
+    name: CamelRestSql
+  component:
+    servlet:
+      mapping:
+        enabled: true
+        context-path: /api/rest/*
+
+# Binding health checks to a different port
+management:
+  port: 9088
+
+# disable all management enpoints except health
+endpoints:
+  enabled: false
+  health:
+    enabled: true
+
+mysql:
+  service:
+    # The name of the service hosting the MySQL database server,
+    # can be customized using the 'MYSQL_SERVICE_NAME' env variable to use a different service
+    name:     shoppingCart
+    # The database to use, can be customized using the 'MYSQL_SERVICE_DATABASE' env variable
+    database: shoppingCart
+
+spring:
+  # Spring JDBC configuration 10.128.26.40
+  datasource:
+    url:      jdbc:mysql://mysql:3306/shoppingCart?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: password
+
+# The application configuration properties
+quickstart:
+  generateOrderPeriod: 10s
+  processOrderPeriod: 30s

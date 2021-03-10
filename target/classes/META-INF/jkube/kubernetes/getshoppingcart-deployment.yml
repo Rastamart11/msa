@@ -1,0 +1,75 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    jkube.io/git-url: https://github.com/Rastamart11/msa
+    jkube.io/git-commit: 1d3fdfaa4bb7886c7a05d91a4aa9521f295258d5
+    jkube.io/git-branch: master
+  labels:
+    app: GetShoppingCart
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+    group: com.erpsol.camel.invoke
+  name: getshoppingcart
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: GetShoppingCart
+      provider: jkube
+      group: com.erpsol.camel.invoke
+  template:
+    metadata:
+      annotations:
+        jkube.io/git-url: https://github.com/Rastamart11/msa
+        jkube.io/git-commit: 1d3fdfaa4bb7886c7a05d91a4aa9521f295258d5
+        jkube.io/git-branch: master
+      labels:
+        app: GetShoppingCart
+        provider: jkube
+        version: 0.0.1-SNAPSHOT
+        group: com.erpsol.camel.invoke
+    spec:
+      containers:
+      - env:
+        - name: KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: HOSTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        image: invoke/getshoppingcart:latest
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 9088
+            scheme: HTTP
+          initialDelaySeconds: 180
+          successThreshold: 1
+        name: spring-boot
+        ports:
+        - containerPort: 9088
+          name: sqlexec
+          protocol: TCP
+        - containerPort: 9779
+          name: prometheus
+          protocol: TCP
+        - containerPort: 8778
+          name: jolokia
+          protocol: TCP
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 9088
+            scheme: HTTP
+          initialDelaySeconds: 10
+          successThreshold: 1
+        securityContext:
+          privileged: false

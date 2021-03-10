@@ -1,0 +1,15 @@
+io\swagger\model\Characteristic.class
+io\swagger\model\ShoppingCartUpdate.class
+com\erpsol\camel\invoke\RestRouter.class
+io\swagger\model\ErrorListType.class
+com\erpsol\camel\invoke\Application.class
+io\swagger\model\DetailResType.class
+io\swagger\model\RelatedParty.class
+io\swagger\model\CartItem.class
+com\erpsol\camel\invoke\ShoppingCartService.class
+io\swagger\model\ProductOfferingRef.class
+io\swagger\model\GenericFault.class
+io\swagger\model\ShoppingCart.class
+io\swagger\model\Price.class
+io\swagger\model\CartPrice.class
+io\swagger\model\Money.class
