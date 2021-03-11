@@ -3,7 +3,7 @@ DROP procedure IF EXISTS `patchShoppingCart`;
 
 DELIMITER $$
 USE `shoppingcart`$$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `patchShoppingCart`(IN IN_id VARCHAR(25), IN IN_action VARCHAR(25), IN IN_quantity Integer, IN IN_proOffId VARCHAR(25),
+CREATE PROCEDURE `patchShoppingCart`(IN IN_id VARCHAR(25), IN IN_action VARCHAR(25), IN IN_quantity Integer, IN IN_proOffId VARCHAR(25),
 									IN IN_customerId VARCHAR(25), OUT OUT_shoppingCartId VARCHAR(25), OUT OUT_code INTEGER, OUT OUT_message VARCHAR(150))
 BEGIN
 	DECLARE varShoppingCartItem VARCHAR(25);
