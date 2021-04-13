@@ -1,0 +1,12 @@
+[
+    { "name": "consultaTodosProductos"				,"url":"http://a91cbe14c301141a58f3a35c60e5031c-857128996.us-east-2.elb.amazonaws.com:9088/api/rest/productOffering" 	,"urlLocal":"ahttp://localhost:31085/api/rest/productOffering" },
+    { "name": "consultaProductoEspecifico"			,"url":"http://a91cbe14c301141a58f3a35c60e5031c-857128996.us-east-2.elb.amazonaws.com:9088/api/rest/productOffering/"	,"urlLocal":"ahttp://localhost:31085/api/rest/productOffering/" },
+    { "name": "crearCarrito"						,"url":"http://ac3d98aeb1a1f4cae8e0083084ccc810-1196654860.us-east-2.elb.amazonaws.com:9087/api/rest/shoppingCart/" 	,"urlLocal":"ahttp://localhost:31952/api/rest/shoppingCart" },
+    { "name": "consultaProductosCarrito"			,"url":"http://a4386213eb5804280919b07caebb354b-64669429.us-east-2.elb.amazonaws.com:9088/api/rest/shoppingCart/" 		,"urlLocal":"ahttp://localhost:30781/api/rest/shoppingCart/" },
+    { "name": "agregarProductoEspecificoCarrito"	,"url":"http://a228b24e5c56e4c989fbb5f42017c2c0-1569301930.us-east-2.elb.amazonaws.com:9088/api/rest/shoppingCart/"		,"urlLocal":"ahttp://localhost:32440/api/rest/shoppingCart/" },
+    { "name": "borrarProductoEspecificoCarrito"		,"url":"http://a228b24e5c56e4c989fbb5f42017c2c0-1569301930.us-east-2.elb.amazonaws.com:9088/api/rest/shoppingCart/"		,"urlLocal":"ahttp://localhost:32440/api/rest/shoppingCart/" },
+    { "name": "modificarProductoEspecificoCarrito"	,"url":"http://a228b24e5c56e4c989fbb5f42017c2c0-1569301930.us-east-2.elb.amazonaws.com:9088/api/rest/shoppingCart/"		,"urlLocal":"ahttp://localhost:32440/api/rest/shoppingCart/" },
+    { "name": "PutProducto", "url": "" },
+    { "name": "deleteProducto", "url": "" }
+
+]

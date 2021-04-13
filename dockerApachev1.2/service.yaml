@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: angular-shoppingcart-service2
+spec:
+  ports:
+  - name: sqlexec
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: angular-shoppingcart2
+  type: NodePort

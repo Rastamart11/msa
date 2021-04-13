@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angular-shoppingcart-deployment2
+  labels:
+    app: angular-shoppingcart2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angular-shoppingcart2
+  template:
+    metadata:
+      labels:
+        app: angular-shoppingcart2
+    spec:
+      containers:
+      - env:
+        - name: KUBERNETES_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: HOSTNAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        name: angular
+        image: angular/shoppingcart2:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+          name: sqlexec
+          protocol: TCP
